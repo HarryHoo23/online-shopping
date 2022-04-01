@@ -29,7 +29,7 @@ const Sort = () => {
           <BsList />
         </button>
       </div>
-      <p>{products.length} products found</p>
+      <p className="how-are-you">{products.length} products found</p>
       <hr />
       <form>
         <label htmlFor='sort'>sort by</label>
