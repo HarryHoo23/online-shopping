@@ -22,7 +22,6 @@ const cart_reducer = (state, action) => {
           return cartItem;
         }
       })
-
       return { ...state, cart: tempCart };
     } else {
       const newItem = {
@@ -56,7 +55,7 @@ const cart_reducer = (state, action) => {
           if (newAmount > item.max) {
             newAmount = item.max;
           }
-          return { ...item, amount: newAmount };
+          return { ...item, amount: newAmount };          
         }
         if (value === 'dec') {
           let newAmount = item.amount - 1;
@@ -65,9 +64,8 @@ const cart_reducer = (state, action) => {
           }
           return { ...item, amount: newAmount };
         }
-      } else {
-        return item
-      }
+      } 
+      return item;
     })
 
     return { ...state, cart: tempCart };
@@ -88,7 +86,7 @@ const cart_reducer = (state, action) => {
   }
 
   return state
-  throw new Error(`No Matching "${action.type}" - action type`)
+  //throw new Error(`No Matching "${action.type}" - action type`)
 }
 
 export default cart_reducer

@@ -21,6 +21,7 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
+    // eslint-disable-next-line
   }, [id]);
   
   useEffect(() => {
@@ -29,6 +30,7 @@ const SingleProductPage = () => {
         history.push('/');
       }, 3000);
     }
+    // eslint-disable-next-line
   }, [error]);
 
   if (loading) {
@@ -40,7 +42,6 @@ const SingleProductPage = () => {
   }
   
   const { name, price, description, stock, stars, reviews, id: sku, company, images } = product;
-  console.log(product);
   return (
     <Wrapper>
       <PageHero title={name} product />
